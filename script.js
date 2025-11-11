@@ -72,3 +72,20 @@ document.querySelectorAll(".team-card, .service-card, .testimonial-card").forEac
   card.style.transition = "opacity 0.5s ease, transform 0.5s ease"
   observer.observe(card)
 })
+
+// Hamburger Menu Toggle
+const hamburger = document.getElementById('hamburger');
+const nav = document.querySelector('.nav');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    nav.classList.toggle('active');
+});
+
+// Close menu when clicking on a link
+nav.addEventListener('click', (e) => {
+    if (e.target.tagName === 'A') {
+        hamburger.classList.remove('active');
+        nav.classList.remove('active');
+    }
+});

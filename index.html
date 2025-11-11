@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Big 4 - Professional Web Development</title>
+    <title>DevDreams - Professional Web Development</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="/Pictures/favicon.jpg" type="image/x-icon">
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <rect x="8" y="2" width="8" height="8" stroke="#2D9F5C" stroke-width="2" transform="rotate(45 12 6)"/>
-                    </svg>
-                    <span>Big 4</span>
+                   <span><img src="/Pictures/devdreams.jpg" alt=""></span>
+                    <span>DevDreams</span>
                 </div>
                 <nav class="nav">
                     <a href="#about">About</a>
@@ -24,37 +23,166 @@
                     <a href="#testimonials">Testimonials</a>
                     <a href="#contact">Contact</a>
                 </nav>
-                <button class="btn btn-primary">Get Started</button>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <a href="#contact"><button class="btn btn-primary" >Get Started</button></a>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
+
     <section class="hero">
         <div class="container">
             <div class="hero-content">
                 <h1>We Build Websites That <span class="text-green">Drive Results</span></h1>
                 <p class="hero-subtitle">Professional web development team creating stunning, high-performance websites that help businesses grow and succeed online.</p>
                 <div class="hero-buttons">
-                    <button class="btn btn-primary">Start your project →</button>
+
+                  <a href="#contact"><button class="btn btn-primary">Start your project →</button></a>
+
                     <button class="btn btn-secondary">View our work</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Team Section -->
     <section class="team" id="about">
         <div class="container">
             <h2>Meet Our Team</h2>
             <p class="section-subtitle">Four passionate developers with years of experience creating web solutions for businesses of all sizes.</p>
             <div class="team-grid">
-                <div class="team-card">
-                    <div class="team-avatar">👤</div>
-                    <h3>Kingsley Amoako</h3>
-                    <p class="role">Full stack Developer</p>
+
+                <div class="team-card" role="group" aria-labelledby="name-king">
+                    <div class="team-avatar">
+                    <!-- replace profile.jpg with your photo filename -->
+                    <img src="/Pictures/Kingsley1.jpg" alt="👤">
+                    </div>
+
+                    <!-- info area -->
+                    <h3 id="name-king">Kingsley Amoako</h3>
+                    <p class="role">Full Stack Developer</p>
+
+                    <!-- small decorative spacer to emulate the white lower separator in the reference -->
+                    <div class="team-info-spacer" aria-hidden="true"></div>
+
+                    <!-- socials — inline SVG icons (no external fonts needed) -->
+                    <div class="socials" aria-label="social links">
+                    <a href="#" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8.6v-2.9h2.0V9.3c0-2.0 1.2-3.1 3-3.1.9 0 1.8.2 1.8.2v2h-1c-1 0-1.3.6-1.3 1.2v1.5h2.3l-.4 2.9h-1.9V22A10 10 0 0 0 22 12z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 6.2A4.8 4.8 0 1 0 16.8 13 4.8 4.8 0 0 0 12 8.2zm6-.9a1.2 1.2 0 1 1-1.2-1.2A1.2 1.2 0 0 1 18 7.3z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Twitter">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 5.9c-.6.3-1.2.5-1.9.6.7-.4 1.2-1 1.5-1.7-.6.4-1.3.6-2.1.8A3.4 3.4 0 0 0 12 8.9c0 .3 0 .7.1 1-2.8-.1-5.2-1.5-6.8-3.6-.3.6-.5 1.3-.5 2 0 1.4.7 2.6 1.8 3.3-.6 0-1.2-.2-1.8-.5v.1c0 1.9 1.4 3.6 3.2 4-.3.1-.6.1-.9.1-.2 0-.4 0-.6-.1.4 1.2 1.6 2.1 3.1 2.2A6.9 6.9 0 0 1 4 19.6c-.2 0-.3 0-.5-.1 1.1.7 2.4 1.1 3.8 1.1 4.6 0 7.1-3.8 7.1-7.1v-.3c.5-.4 1-.9 1.4-1.4-.5.2-1 .3-1.6.4.6-.4 1-1 1.3-1.6z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Pinterest">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 3.9 19.1c-.1-.8-.2-2.1 0-3 .2-.8 1.4-5.3 1.4-5.3s.3-.6.3-1.6c0-1.5-.9-2.6-2-2.6-1 0-1.5.7-1.5 1.6 0 1 .6 2.5.9 3.9.3 1.2-.6 2.3-1.8 2.3-2.4 0-4.3-2.6-4.3-6 0-2.5 1.8-4.5 5.1-4.5 2.7 0 4.8 1.9 4.8 4.5 0 2.8-1.8 4.9-4.3 4.9-0.9 0-1.7-.5-2-.9 0 0-.4 1.6-.5 2-.2.8-.7 1.6-1 2.2A10 10 0 0 0 12 2z"/></svg>
+                    </a>
+                    </div>
                 </div>
-                <div class="team-card">
+
+
+
+                 <div class="team-card" role="group" aria-labelledby="name-king">
+                    <div class="team-avatar">
+                    <!-- replace profile.jpg with your photo filename -->
+                    <img src="/Pictures/Torsu1.jpg" alt="👤">
+                    </div>
+
+                    <!-- info area -->
+                    <h3 id="name-king">Stephen Torsu</h3>
+                    <p class="role">Full Stack Developer</p>
+
+                    <!-- small decorative spacer to emulate the white lower separator in the reference -->
+                    <div class="team-info-spacer" aria-hidden="true"></div>
+
+                    <!-- socials — inline SVG icons (no external fonts needed) -->
+                    <div class="socials" aria-label="social links">
+                    <a href="#" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8.6v-2.9h2.0V9.3c0-2.0 1.2-3.1 3-3.1.9 0 1.8.2 1.8.2v2h-1c-1 0-1.3.6-1.3 1.2v1.5h2.3l-.4 2.9h-1.9V22A10 10 0 0 0 22 12z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 6.2A4.8 4.8 0 1 0 16.8 13 4.8 4.8 0 0 0 12 8.2zm6-.9a1.2 1.2 0 1 1-1.2-1.2A1.2 1.2 0 0 1 18 7.3z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Twitter">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 5.9c-.6.3-1.2.5-1.9.6.7-.4 1.2-1 1.5-1.7-.6.4-1.3.6-2.1.8A3.4 3.4 0 0 0 12 8.9c0 .3 0 .7.1 1-2.8-.1-5.2-1.5-6.8-3.6-.3.6-.5 1.3-.5 2 0 1.4.7 2.6 1.8 3.3-.6 0-1.2-.2-1.8-.5v.1c0 1.9 1.4 3.6 3.2 4-.3.1-.6.1-.9.1-.2 0-.4 0-.6-.1.4 1.2 1.6 2.1 3.1 2.2A6.9 6.9 0 0 1 4 19.6c-.2 0-.3 0-.5-.1 1.1.7 2.4 1.1 3.8 1.1 4.6 0 7.1-3.8 7.1-7.1v-.3c.5-.4 1-.9 1.4-1.4-.5.2-1 .3-1.6.4.6-.4 1-1 1.3-1.6z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Pinterest">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 3.9 19.1c-.1-.8-.2-2.1 0-3 .2-.8 1.4-5.3 1.4-5.3s.3-.6.3-1.6c0-1.5-.9-2.6-2-2.6-1 0-1.5.7-1.5 1.6 0 1 .6 2.5.9 3.9.3 1.2-.6 2.3-1.8 2.3-2.4 0-4.3-2.6-4.3-6 0-2.5 1.8-4.5 5.1-4.5 2.7 0 4.8 1.9 4.8 4.5 0 2.8-1.8 4.9-4.3 4.9-0.9 0-1.7-.5-2-.9 0 0-.4 1.6-.5 2-.2.8-.7 1.6-1 2.2A10 10 0 0 0 12 2z"/></svg>
+                    </a>
+                    </div>
+                </div>
+
+
+
+                 <div class="team-card" role="group" aria-labelledby="name-king">
+                    <div class="team-avatar">
+                    <!-- replace profile.jpg with your photo filename -->
+                    <img src="/Pictures/Oduro1.jpg" alt="👤">
+                    </div>
+
+                    <!-- info area -->
+                    <h3 id="name-king">Oduro Kwarteng</h3>
+                    <p class="role">Full Stack Developer</p>
+
+                    <!-- small decorative spacer to emulate the white lower separator in the reference -->
+                    <div class="team-info-spacer" aria-hidden="true"></div>
+
+                    <!-- socials — inline SVG icons (no external fonts needed) -->
+                    <div class="socials" aria-label="social links">
+                    <a href="#" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8.6v-2.9h2.0V9.3c0-2.0 1.2-3.1 3-3.1.9 0 1.8.2 1.8.2v2h-1c-1 0-1.3.6-1.3 1.2v1.5h2.3l-.4 2.9h-1.9V22A10 10 0 0 0 22 12z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 6.2A4.8 4.8 0 1 0 16.8 13 4.8 4.8 0 0 0 12 8.2zm6-.9a1.2 1.2 0 1 1-1.2-1.2A1.2 1.2 0 0 1 18 7.3z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Twitter">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 5.9c-.6.3-1.2.5-1.9.6.7-.4 1.2-1 1.5-1.7-.6.4-1.3.6-2.1.8A3.4 3.4 0 0 0 12 8.9c0 .3 0 .7.1 1-2.8-.1-5.2-1.5-6.8-3.6-.3.6-.5 1.3-.5 2 0 1.4.7 2.6 1.8 3.3-.6 0-1.2-.2-1.8-.5v.1c0 1.9 1.4 3.6 3.2 4-.3.1-.6.1-.9.1-.2 0-.4 0-.6-.1.4 1.2 1.6 2.1 3.1 2.2A6.9 6.9 0 0 1 4 19.6c-.2 0-.3 0-.5-.1 1.1.7 2.4 1.1 3.8 1.1 4.6 0 7.1-3.8 7.1-7.1v-.3c.5-.4 1-.9 1.4-1.4-.5.2-1 .3-1.6.4.6-.4 1-1 1.3-1.6z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Pinterest">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 3.9 19.1c-.1-.8-.2-2.1 0-3 .2-.8 1.4-5.3 1.4-5.3s.3-.6.3-1.6c0-1.5-.9-2.6-2-2.6-1 0-1.5.7-1.5 1.6 0 1 .6 2.5.9 3.9.3 1.2-.6 2.3-1.8 2.3-2.4 0-4.3-2.6-4.3-6 0-2.5 1.8-4.5 5.1-4.5 2.7 0 4.8 1.9 4.8 4.5 0 2.8-1.8 4.9-4.3 4.9-0.9 0-1.7-.5-2-.9 0 0-.4 1.6-.5 2-.2.8-.7 1.6-1 2.2A10 10 0 0 0 12 2z"/></svg>
+                    </a>
+                    </div>
+                </div>
+
+
+
+                 <div class="team-card" role="group" aria-labelledby="name-king">
+                    <div class="team-avatar">
+                    <!-- replace profile.jpg with your photo filename -->
+                    <img src="/Pictures/samuel1.jpg" alt="👤">
+                    </div>
+
+                    <!-- info area -->
+                    <h3 id="name-king">Samuel Dwomoh</h3>
+                    <p class="role">Full Stack Developer</p>
+
+                    <!-- small decorative spacer to emulate the white lower separator in the reference -->
+                    <div class="team-info-spacer" aria-hidden="true"></div>
+
+                    <!-- socials — inline SVG icons (no external fonts needed) -->
+                    <div class="socials" aria-label="social links">
+                    <a href="#" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8.6v-2.9h2.0V9.3c0-2.0 1.2-3.1 3-3.1.9 0 1.8.2 1.8.2v2h-1c-1 0-1.3.6-1.3 1.2v1.5h2.3l-.4 2.9h-1.9V22A10 10 0 0 0 22 12z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 6.2A4.8 4.8 0 1 0 16.8 13 4.8 4.8 0 0 0 12 8.2zm6-.9a1.2 1.2 0 1 1-1.2-1.2A1.2 1.2 0 0 1 18 7.3z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Twitter">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 5.9c-.6.3-1.2.5-1.9.6.7-.4 1.2-1 1.5-1.7-.6.4-1.3.6-2.1.8A3.4 3.4 0 0 0 12 8.9c0 .3 0 .7.1 1-2.8-.1-5.2-1.5-6.8-3.6-.3.6-.5 1.3-.5 2 0 1.4.7 2.6 1.8 3.3-.6 0-1.2-.2-1.8-.5v.1c0 1.9 1.4 3.6 3.2 4-.3.1-.6.1-.9.1-.2 0-.4 0-.6-.1.4 1.2 1.6 2.1 3.1 2.2A6.9 6.9 0 0 1 4 19.6c-.2 0-.3 0-.5-.1 1.1.7 2.4 1.1 3.8 1.1 4.6 0 7.1-3.8 7.1-7.1v-.3c.5-.4 1-.9 1.4-1.4-.5.2-1 .3-1.6.4.6-.4 1-1 1.3-1.6z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Pinterest">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 3.9 19.1c-.1-.8-.2-2.1 0-3 .2-.8 1.4-5.3 1.4-5.3s.3-.6.3-1.6c0-1.5-.9-2.6-2-2.6-1 0-1.5.7-1.5 1.6 0 1 .6 2.5.9 3.9.3 1.2-.6 2.3-1.8 2.3-2.4 0-4.3-2.6-4.3-6 0-2.5 1.8-4.5 5.1-4.5 2.7 0 4.8 1.9 4.8 4.5 0 2.8-1.8 4.9-4.3 4.9-0.9 0-1.7-.5-2-.9 0 0-.4 1.6-.5 2-.2.8-.7 1.6-1 2.2A10 10 0 0 0 12 2z"/></svg>
+                    </a>
+                    </div>
+                </div>
+
+
+                <!-- <div class="team-card">
                     <div class="team-avatar">👤</div>
                     <h3>Stephen Torsu</h3>
                     <p class="role">Full stack Developer</p>
@@ -68,7 +196,7 @@
                     <div class="team-avatar">👤</div>
                     <h3>Samuel Dwomoh</h3>
                     <p class="role">Full stack Developer</p>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
@@ -111,7 +239,7 @@
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">"Big 4 delivered exactly what we needed. Professional, fast, and the website looks amazing."</p>
+                    <p class="testimonial-text">"DevDreams delivered exactly what we needed. Professional, fast, and the website looks amazing."</p>
                     <h4>Jennifer Osei Yeboah</h4>
                     <p class="company">Ardmax Industries Company</p>
                 </div>
@@ -147,7 +275,7 @@
                     <h2>Get in Touch</h2>
                     <div class="info-item">
                         <h4>Email</h4>
-                        <p>hello@big4.com</p>
+                        <p>hello@DevDreams.com</p>
                     </div>
                     <div class="info-item">
                         <h4>Phone</h4>
@@ -206,7 +334,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>Big 4</h4>
+                    <h4>DevDreams</h4>
                     <p>Professional web development team creating exceptional digital experiences.</p>
                 </div>
                 <div class="footer-section">
@@ -229,13 +357,13 @@
                 </div>
                 <div class="footer-section">
                     <h4>Contact</h4>
-                    <p>big4@gmail.com</p>
+                    <p>DevDreams@gmail.com</p>
                     <p>+233 23-4567-784</p>
                     <p>Available Mon-Fri 9AM-6PM</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2025 Big 4. All rights reserved</p>
+                <p>© 2025 DevDreams. All rights reserved</p>
             </div>
         </div>
     </footer>
