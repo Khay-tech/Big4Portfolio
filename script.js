@@ -1,8 +1,8 @@
 // Form submission handling
-const contactForm = document.getElementById("contactForm")
+const contactForm = document.getElementById("contactForm");
 
 contactForm.addEventListener("submit", (e) => {
-  e.preventDefault()
+  e.preventDefault();
 
   // Get form data
   const formData = {
@@ -11,67 +11,73 @@ contactForm.addEventListener("submit", (e) => {
     email: document.getElementById("email").value,
     company: document.getElementById("company").value,
     message: document.getElementById("message").value,
-  }
+  };
 
   // Validate form
   if (!formData.firstName || !formData.lastName || !formData.email || !formData.message) {
-    alert("Please fill in all required fields")
-    return
+    alert("Please fill in all required fields");
+    return;
   }
 
   // Validate email
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(formData.email)) {
-    alert("Please enter a valid email address")
-    return
+    alert("Please enter a valid email address");
+    return;
   }
 
   // Log form data (in a real application, you would send this to a server)
-  console.log("Form submitted:", formData)
+  console.log("Form submitted:", formData);
 
   // Show success message
-  alert("Thank you for your message! We will get back to you within 24 hours.")
+  alert("Thank you for your message! We will get back to you within 24 hours.");
 
   // Reset form
-  contactForm.reset()
-})
+  contactForm.reset();
+});
 
 // Smooth scroll for navigation links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
-    e.preventDefault()
-    const target = document.querySelector(this.getAttribute("href"))
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
     if (target) {
       target.scrollIntoView({
         behavior: "smooth",
         block: "start",
-      })
+      });
+      
+      // Close mobile menu after clicking a link
+      if (window.innerWidth <= 768) {
+        hamburger.classList.remove("active");
+        nav.classList.remove("active");
+      }
     }
-  })
-})
+  });
+});
 
 // Add scroll animation for elements
 const observerOptions = {
   threshold: 0.1,
   rootMargin: "0px 0px -50px 0px",
-}
+};
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      entry.target.style.opacity = "1"
-      entry.target.style.transform = "translateY(0)"
+      entry.target.style.opacity = "1";
+      entry.target.style.transform = "translateY(0)";
     }
-  })
-}, observerOptions)
+  });
+}, observerOptions);
 
 // Apply animation to cards on scroll
 document.querySelectorAll(".team-card, .service-card, .testimonial-card").forEach((card) => {
-  card.style.opacity = "0"
-  card.style.transform = "translateY(20px)"
-  card.style.transition = "opacity 0.5s ease, transform 0.5s ease"
-  observer.observe(card)
-})
+  card.style.opacity = "0";
+  card.style.transform = "translateY(20px)";
+  card.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+  observer.observe(card);
+});
 
 // Hamburger Menu Toggle
 const hamburger = document.getElementById('hamburger');
@@ -80,6 +86,13 @@ const nav = document.querySelector('.nav');
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     nav.classList.toggle('active');
+    
+    // Prevent body scroll when menu is open
+    if (nav.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = 'auto';
+    }
 });
 
 // Close menu when clicking on a link
@@ -87,5 +100,24 @@ nav.addEventListener('click', (e) => {
     if (e.target.tagName === 'A') {
         hamburger.classList.remove('active');
         nav.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !nav.contains(e.target) && nav.classList.contains('active')) {
+        hamburger.classList.remove('active');
+        nav.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// Close menu on window resize if it becomes larger than mobile
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 768 && nav.classList.contains('active')) {
+        hamburger.classList.remove('active');
+        nav.classList.remove('active');
+        document.body.style.overflow = 'auto';
     }
 });
